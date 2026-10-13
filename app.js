@@ -13,6 +13,7 @@ if(vtile&&curF=='all'&&vm()=='a'&&list.length>3){ // big first painting + stack 
  R.style.width=w2.toFixed(2)+'px';L.style.width=(T-g-w2).toFixed(2)+'px'}
 for(let i=0;i<n;i++){const c=document.createElement('div');c.className='col';grid.appendChild(c);cols.push(c);hs.push(0)}
 if(vtile&&curF=='all'&&vm()=='b'&&list[0]!==vtile&&list.includes(vtile)){list=list.filter(t=>t!==vtile);list.splice(1,0,vtile);cols[0].appendChild(list[0]);cols[0].appendChild(vtile);hs[0]+=ratio(list[0])+ratio(vtile);list=list.slice(2)}
+const v2=tiles.find(t=>t.classList.contains('vid2'));if(hero&&v2&&list.includes(v2)){list=list.filter(t=>t!==v2);cols[n-1].appendChild(v2);hs[n-1]+=ratio(v2)}
 list.forEach(t=>{let k=0;for(let i=1;i<n;i++)if(hs[i]<hs[k]-1)k=i;cols[k].appendChild(t);hs[k]+=ratio(t)});
 document.querySelectorAll('.tile video').forEach(v=>{v.muted=true;const p=v.play();if(p&&p.catch)p.catch(()=>{})})}
 addEventListener('resize',()=>{if(hero)layout()});VMQ.addEventListener('change',()=>layout());
