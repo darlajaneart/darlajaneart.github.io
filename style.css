@@ -25,3 +25,21 @@ footer{text-align:center;padding:2rem;font:.85rem system-ui,sans-serif;color:var
 #lb button{position:absolute;background:none;border:0;font:300 2.4rem/1 system-ui,sans-serif;color:var(--mute);cursor:pointer;padding:1rem;transition:color .2s}
 #lb button:hover{color:var(--ink)}.x{top:.5rem;right:1rem}.pv{left:.5rem;top:50%;transform:translateY(-50%)}.nx{right:.5rem;top:50%;transform:translateY(-50%)}
 @media(max-width:600px){header{padding-top:3.5rem}nav{gap:1.2rem}.pv,.nx{display:none}}
+.eyebrow{font:500 .8rem/1 system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-bottom:1rem}
+.artist{max-width:1200px;margin:3rem auto 0;padding:5rem clamp(1rem,4vw,3rem);border-top:1px solid var(--line)}
+.artist-head{text-align:center;margin-bottom:3.5rem}
+.artist h2,#contact h2{font:400 clamp(2.2rem,5vw,3.4rem)/1.1 "Cormorant Garamond",Georgia,serif}
+.role{margin-top:.8rem;color:var(--mute);font-style:italic}
+.artist-grid{display:grid;grid-template-columns:5fr 6fr;gap:3rem 4rem;align-items:start}
+.ph{overflow:hidden}.ph img{display:block;width:100%;height:auto;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}.ph:hover img{transform:scale(1.02)}
+.ph-b{grid-column:1/-1;max-width:900px;margin:1rem auto 0}
+.bio p{color:#3d3833;margin-bottom:1.2rem}
+.bio .lead{font:400 1.55rem/1.45 "Cormorant Garamond",Georgia,serif;color:var(--ink)}
+.skills{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
+.skills li{font:.85rem system-ui,sans-serif;letter-spacing:.04em;padding:.35rem .8rem;border:1px solid var(--line);color:#4a453f}
+#contact{text-align:center;padding:5rem 1.5rem 4rem;border-top:1px solid var(--line);max-width:1200px;margin:0 auto}
+.clist{margin-top:1.8rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.2rem;font-size:1.1rem}
+.clist a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .3s}
+.clist a:hover{border-color:var(--ink)}.clist span{color:var(--line)}
+.loc{margin-top:1.2rem;color:var(--mute)}
+@media(max-width:800px){.artist-grid{grid-template-columns:1fr}.clist span{display:none}.clist{flex-direction:column}}
