@@ -1,12 +1,17 @@
 /* Decorative accents (preview build). All aria-hidden, pointer-events none. */
 (function(){
 var D='img/deco/';
-// bunny parade
+// fish band: animated pastel pixel school swimming right-to-left across the full width
 var ab=document.querySelector('#about');
-if(ab){var b=document.createElement('div');b.className='bunny-band';b.setAttribute('aria-hidden','true');
- var h='';[[8,30],[22,62],[37,20],[50,55],[63,28],[76,60],[90,24],[15,10],[44,8],[83,12]].forEach(function(p,i){h+='<img class="st" src="'+D+'star-red-'+(i+1)+'.png" alt="" style="left:'+p[0]+'%;top:'+p[1]+'%;animation-delay:'+(i*.37).toFixed(2)+'s">'});
- for(var i=0;i<4;i++)h+='<span class="bn" style="animation-delay:-'+(i*(innerWidth<=700?20:26)/4).toFixed(2)+'s;--x:'+(12+i*22)+'%"><img src="'+D+'bunny-'+(i+1)+'.png" alt="" style="animation-delay:-'+(i*.22).toFixed(2)+'s"></span>';
- b.innerHTML=h;ab.appendChild(b)}
+if(ab){var b=document.createElement('div');b.className='fish-band';b.setAttribute('aria-hidden','true');ab.appendChild(b);
+ var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function band(){var W=document.documentElement.clientWidth,mob=innerWidth<=700,fw=mob?200:250,n=Math.max(2,Math.round(W/300)+1),sp=mob?38:46,D=((W+fw*1.12)/sp),h='';
+  var gap=[0,.37,.61,.86,.2,.5],sc=[1,.82,1.08,.9,.96,.86],yy=[2,24,-6,16,-2,10],src=['fish-school.webp','fish-school-2.webp','fish-school-3.webp'];
+  for(var i=0;i<n;i++){var dl=-((i+gap[i%6]*.25)*D/n).toFixed(2),y=yy[i%6];
+   h+=rm?'<img class="fs" src="'+D_+'fish-still.webp" alt="" style="left:'+(4+i*(92/n)).toFixed(1)+'%;top:'+(y+6)+'px">'
+     :'<img class="fs" src="'+D_+src[i%3]+'?v=1" alt="" style="left:100%;top:'+(y+6)+'px;width:'+(fw*sc[i%6]).toFixed(0)+'px;--dist:-'+(W+fw*1.12).toFixed(0)+'px;animation:fswim '+D.toFixed(2)+'s linear '+dl+'s infinite">'}
+  b.innerHTML=h}
+ var D_=D;band();var bw=innerWidth;addEventListener('resize',function(){if(innerWidth!==bw){bw=innerWidth;band()}})}
 // Contact: cupid wax seal in normal page flow, centred above the CONTACT eyebrow (never over photos)
 var ce=document.querySelector('#contact .eyebrow');if(ce&&!document.querySelector('.contact-seal')){var cs=document.createElement('img');cs.className='contact-seal';cs.src=D+'seal.png';cs.alt='';cs.setAttribute('aria-hidden','true');ce.parentNode.insertBefore(cs,ce)}
 var L=document.createElement('div');L.className='deco-layer';L.setAttribute('aria-hidden','true');document.body.appendChild(L);
