@@ -3,15 +3,15 @@
 .deco-layer img{position:absolute;display:block;height:auto;filter:drop-shadow(0 2px 3px rgba(120,40,70,.18))}
 /* fish band: full-bleed, school enters off the right edge and exits off the left */
 .artist,#about{position:relative}
-.fish-band{position:relative;height:160px;width:100vw;max-width:none;margin:2.5rem 0 0 calc(50% - 50vw);overflow:hidden;pointer-events:none}
-.fish-band .fs{position:absolute;width:250px;height:auto;will-change:transform}
+.fish-band{position:relative;height:190px;width:100vw;max-width:none;margin:2.5rem 0 0 calc(50% - 50vw);overflow:hidden;pointer-events:none}
+.fish-band .fs{position:absolute;width:300px;height:auto;will-change:transform}
 @keyframes fswim{from{transform:translateX(0)}to{transform:translateX(var(--dist))}}
-@media(max-width:700px){.fish-band{height:130px;margin-top:1.5rem}.fish-band .fs{width:200px}}
+@media(max-width:700px){.fish-band{height:155px;margin-top:1.5rem}.fish-band .fs{width:240px}}
 @media(prefers-reduced-motion:reduce){.fish-band .fs{animation:none!important;transform:none!important}}
 /* luxe gold foil seal (Collector tier) */
 .deco-layer .gold-seal{position:absolute;display:block;filter:drop-shadow(0 3px 4px rgba(90,55,0,.35)) drop-shadow(0 0 6px rgba(255,215,120,.35))}
 .deco-layer .gold-seal img{position:static;width:100%;height:100%;filter:none}
-.gold-seal .gl{position:absolute;inset:0;-webkit-mask:url(img/deco/seal-gold.png) center/100% 100% no-repeat;mask:url(img/deco/seal-gold.png) center/100% 100% no-repeat;background:linear-gradient(115deg,transparent 30%,rgba(255,252,230,.0) 38%,rgba(255,250,220,.85) 48%,rgba(255,255,255,.95) 50%,rgba(255,240,190,.6) 54%,transparent 64%) no-repeat;background-size:300% 100%;background-position:120% 0;mix-blend-mode:screen;animation:goldsweep 3.6s ease-in-out infinite}
+.gold-seal .gl{position:absolute;inset:0;-webkit-mask:url(img/deco/seal-gold-d.png) center/100% 100% no-repeat;mask:url(img/deco/seal-gold-d.png) center/100% 100% no-repeat;background:linear-gradient(115deg,transparent 30%,rgba(255,252,230,.0) 38%,rgba(255,250,220,.85) 48%,rgba(255,255,255,.95) 50%,rgba(255,240,190,.6) 54%,transparent 64%) no-repeat;background-size:300% 100%;background-position:120% 0;mix-blend-mode:screen;animation:goldsweep 3.6s ease-in-out infinite}
 .gold-seal .tw{position:absolute;width:9px;height:9px;background:radial-gradient(circle,#fff 0 18%,rgba(255,240,180,.9) 30%,transparent 70%);clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);animation:goldtw 2.4s ease-in-out infinite}
 .gold-seal .t1{left:22%;top:18%}.gold-seal .t2{left:70%;top:30%;animation-delay:.8s;width:7px;height:7px}.gold-seal .t3{left:42%;top:72%;animation-delay:1.6s}
 @keyframes goldsweep{0%{background-position:130% 0}55%,100%{background-position:-30% 0}}

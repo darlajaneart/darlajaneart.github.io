@@ -310,3 +310,6 @@ body.nav-stuck header nav a,body.nav-stuck header nav button{padding:.15rem 0}
 .totop:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){body.nav-stuck header nav{animation:none}.totop{transition:none}}
 body.nav-stuck header{z-index:60!important}
+/* v76 page-style hash views */
+[hidden]{display:none!important}
+body[data-view=meet] #about,body[data-view=contact] #contact{min-height:calc(100vh - 20rem)}
