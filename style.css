@@ -1,31 +1,31 @@
-:root{--bg:#faf8f4;--ink:#2a2724;--mute:#6f6962;--line:#e6e1d8}
+:root{--bg:#f5d2d1;--cream:#fdf8cf;--ink:#6e3440;--mute:#8a4a55;--line:#e2aeb0}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font:18px/1.7 "Georgia","Iowan Old Style",serif;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font:400 18px/1.7 "Georgia","Iowan Old Style",serif;-webkit-font-smoothing:antialiased}
 header{text-align:center;padding:5.5rem 1.5rem 2.5rem}
-h1{font:400 clamp(2.8rem,7vw,5rem)/1 "Cormorant Garamond","Didot","Bodoni 72","Playfair Display",Georgia,serif;letter-spacing:.06em}
-.sub{margin-top:1rem;font:500 .85rem/1 system-ui,sans-serif;letter-spacing:.35em;text-transform:uppercase;color:var(--mute)}
-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin-top:2.8rem;font:500 .95rem system-ui,sans-serif;letter-spacing:.08em}
-nav button,nav a{background:none;border:0;color:var(--mute);cursor:pointer;font:inherit;text-decoration:none;padding:.3rem 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+h1{font:400 clamp(4.6rem,13vw,9rem)/1.05 "Pinyon Script","Edwardian Script ITC",cursive;color:var(--cream);letter-spacing:0;text-shadow:0 1px 2px rgba(138,74,85,.35)}
+.sub{margin-top:.6rem;font:500 17px/1 "Jost",system-ui,sans-serif;letter-spacing:.42em;text-transform:uppercase;color:var(--mute)}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem 2.2rem;margin-top:2.8rem;font:500 17px "Jost",system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+nav button,nav a{background:none;border:0;text-transform:inherit;letter-spacing:inherit;color:var(--mute);cursor:pointer;font:inherit;text-decoration:none;padding:.3rem 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
 nav button:hover,nav a:hover{color:var(--ink)}nav button.on{color:var(--ink);border-color:var(--ink)}
 main{max-width:1500px;margin:0 auto;padding:1rem clamp(1rem,4vw,3rem) 4rem}
-.grid{columns:3 320px;column-gap:1.6rem}
-.tile{break-inside:avoid;margin-bottom:1.6rem;cursor:zoom-in;overflow:hidden;background:#efebe4;opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
+.grid{display:flex;gap:1.6rem;align-items:flex-start}.grid .col{flex:1;min-width:0}
+.tile{break-inside:avoid;margin-bottom:1.6rem;cursor:zoom-in;overflow:hidden;background:#efc4c4;opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
 .tile.in{opacity:1;transform:none}.tile.hide{display:none}
 .tile img{display:block;width:100%;height:auto;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .6s}
-.tile:hover img{transform:scale(1.025);filter:brightness(1.03)}
+.tile:hover img{transform:scale(1.015);filter:brightness(1.03)}
 #about{max-width:640px;margin:2rem auto 0;padding:4rem 1.5rem 5rem;text-align:center;border-top:1px solid var(--line)}
-#about h2{font:400 2.2rem "Cormorant Garamond",Georgia,serif;margin-bottom:1.2rem}
-#about p{color:#4a453f;margin-bottom:1rem}
-footer{text-align:center;padding:2rem;font:.85rem system-ui,sans-serif;color:var(--mute)}
-#lb{position:fixed;inset:0;background:rgba(250,248,244,.97);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s;z-index:9}
+
+#about p{color:var(--ink);margin-bottom:1rem}
+footer{text-align:center;padding:2rem;font:500 17px "Jost",system-ui,sans-serif;color:var(--mute)}
+#lb{position:fixed;inset:0;background:rgba(245,210,209,.98);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s;z-index:9}
 #lb.open{opacity:1;pointer-events:auto}
 #lb figure{text-align:center}
 #lb img{max-width:90vw;max-height:84vh;box-shadow:0 10px 40px rgba(0,0,0,.12);transition:opacity .3s}
-#lb figcaption{margin-top:1rem;font:1rem system-ui,sans-serif;color:var(--mute);letter-spacing:.04em}
+#lb figcaption{margin-top:1rem;font:500 17px "Jost",system-ui,sans-serif;color:var(--mute);letter-spacing:.04em}
 #lb button{position:absolute;background:none;border:0;font:300 2.4rem/1 system-ui,sans-serif;color:var(--mute);cursor:pointer;padding:1rem;transition:color .2s}
 #lb button:hover{color:var(--ink)}.x{top:.5rem;right:1rem}.pv{left:.5rem;top:50%;transform:translateY(-50%)}.nx{right:.5rem;top:50%;transform:translateY(-50%)}
 @media(max-width:600px){header{padding-top:3.5rem}nav{gap:1.2rem}.pv,.nx{display:none}}
-.eyebrow{font:500 .8rem/1 system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-bottom:1rem}
+.eyebrow{font:500 17px/1 "Jost",system-ui,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-bottom:1rem}
 .artist{max-width:1200px;margin:3rem auto 0;padding:5rem clamp(1rem,4vw,3rem);border-top:1px solid var(--line)}
 .artist-head{text-align:center;margin-bottom:3.5rem}
 .artist h2,#contact h2{font:400 clamp(2.2rem,5vw,3.4rem)/1.1 "Cormorant Garamond",Georgia,serif}
@@ -33,13 +33,18 @@ footer{text-align:center;padding:2rem;font:.85rem system-ui,sans-serif;color:var
 .artist-grid{display:grid;grid-template-columns:5fr 6fr;gap:3rem 4rem;align-items:start}
 .ph{overflow:hidden}.ph img{display:block;width:100%;height:auto;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}.ph:hover img{transform:scale(1.02)}
 .ph-b{grid-column:1/-1;max-width:900px;margin:1rem auto 0}
-.bio p{color:#3d3833;margin-bottom:1.2rem}
+.bio p{color:var(--ink);margin-bottom:1.2rem}
 .bio .lead{font:400 1.55rem/1.45 "Cormorant Garamond",Georgia,serif;color:var(--ink)}
 .skills{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
-.skills li{font:.85rem system-ui,sans-serif;letter-spacing:.04em;padding:.35rem .8rem;border:1px solid var(--line);color:#4a453f}
+.skills li{font:500 17px "Jost",system-ui,sans-serif;letter-spacing:.04em;padding:.35rem .8rem;border:1px solid var(--line);color:var(--ink)}
 #contact{text-align:center;padding:5rem 1.5rem 4rem;border-top:1px solid var(--line);max-width:1200px;margin:0 auto}
 .clist{margin-top:1.8rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.2rem;font-size:1.1rem}
-.clist a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .3s}
-.clist a:hover{border-color:var(--ink)}.clist span{color:var(--line)}
+.clist a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--mute);transition:border-color .3s}
+.clist a:hover{border-color:var(--ink)}.clist span{color:var(--mute)}
 .loc{margin-top:1.2rem;color:var(--mute)}
 @media(max-width:800px){.artist-grid{grid-template-columns:1fr}.clist span{display:none}.clist{flex-direction:column}}
+
+.artist h2,#contact h2{font-family:"Pinyon Script",cursive;color:var(--ink);font-size:clamp(3rem,7vw,4.6rem)}
+.tile img{max-width:100%;height:auto;object-fit:contain}
+
+h1.sig{margin:0;line-height:0}h1.sig img{width:min(560px,82vw);height:auto;display:inline-block}
