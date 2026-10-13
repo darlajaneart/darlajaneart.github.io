@@ -48,3 +48,155 @@ footer{text-align:center;padding:2rem;font:500 17px "Jost",system-ui,sans-serif;
 .tile img{max-width:100%;height:auto;object-fit:contain}
 
 h1.sig{margin:0;line-height:0}h1.sig img{width:min(560px,82vw);height:auto;display:inline-block}
+
+/* Patreon page */
+nav a.on{color:var(--ink);border-color:var(--ink)}
+.pt{max-width:1200px;margin:0 auto;padding:0 clamp(1rem,4vw,3rem)}
+.pt-hero{text-align:center;padding:1.5rem 0 4.5rem}
+.pt-banner{display:block;width:100%;height:auto;box-shadow:0 10px 40px rgba(110,52,64,.12);margin-bottom:3.5rem}
+.pt h2{font:400 clamp(3rem,7vw,4.6rem)/1.1 "Pinyon Script",cursive;color:var(--ink)}
+.pt-hero .lead,.pt-why .lead{font:400 clamp(1.3rem,2.4vw,1.55rem)/1.5 "Cormorant Garamond",Georgia,serif;max-width:680px;margin:1.4rem auto 0}
+.btn{display:inline-block;margin-top:2.2rem;padding:1.05rem 2.6rem;background:var(--ink);color:var(--cream);font:500 16px/1 "Jost",system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);border-radius:999px;transition:background .3s,color .3s,transform .3s}
+.btn:hover{background:transparent;color:var(--ink);transform:translateY(-2px)}
+.btn.sm{margin-top:1.4rem;padding:.85rem 2rem;font-size:15px}
+.pt-why{border-top:1px solid var(--line);padding:5rem 0;text-align:center}
+.pt-why .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem 3.5rem;text-align:left;margin-top:3rem}
+.pt-why h3,.tier h3{font:500 1.55rem/1.25 "Cormorant Garamond",Georgia,serif;color:var(--ink);margin-bottom:.5rem}
+.pt-why .cols p{color:var(--ink)}
+.pt-why .heart{display:block;color:var(--mute);font:400 1.4rem/1 Georgia,serif;margin-bottom:.4rem}
+.pt-tiers{border-top:1px solid var(--line);padding:5rem 0;text-align:center}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;text-align:center}
+.tier{background:var(--cream);border:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.tier:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(110,52,64,.13)}
+.tier img{display:block;width:100%;height:auto;border-bottom:1px solid var(--line)}
+.tier .body{padding:1.8rem 1.6rem 2.2rem;display:flex;flex-direction:column;flex:1}
+.tier .price{font:500 15px/1 "Jost",system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:1rem}
+.tier p{color:var(--ink);font-size:1rem;flex:1}
+.tier.feat{border-color:var(--mute)}
+.pt-note{margin-top:2.5rem;color:var(--mute);font-style:italic}
+@media(max-width:900px){.tiers{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto}.pt-why .cols{grid-template-columns:1fr}}
+.pt-meet{border-top:1px solid var(--line);padding:5rem 0;display:grid;grid-template-columns:6fr 5fr;gap:3rem 4rem;align-items:center}
+.meet-ph{display:grid;gap:1rem}.meet-ph img{display:block;width:100%;height:auto;box-shadow:0 10px 40px rgba(110,52,64,.12)}
+.meet-txt p{color:var(--ink);margin-bottom:1.1rem}.meet-txt .lead{font:400 1.55rem/1.45 "Cormorant Garamond",Georgia,serif;margin-top:1rem}
+@media(max-width:900px){.pt-meet{grid-template-columns:1fr;text-align:center}}
+.frame{border-radius:18px;overflow:hidden;border:6px solid var(--cream);box-shadow:0 10px 40px rgba(110,52,64,.14)}
+.meet-ph.frame{display:block}.frame img{box-shadow:none!important;display:block;width:100%;height:auto}
+.pt-band{max-width:900px;margin:0 auto 5rem}
+@media(max-width:900px){.pt-band{margin-bottom:3.5rem}}
+/* deeper pinks, Patreon page only */
+body.pt-page{--bg:#efc2c3;--line:#d99ca2;--mute:#83434f;background:var(--bg)}
+.pt-page .tier{background:#fbeede}.pt-page .tier.feat{border-color:#c97585}
+.pt-page .pt-banner{box-shadow:0 10px 40px rgba(110,52,64,.18)}
+.pt-page .meet-ph img{display:block;width:100%;height:auto;box-shadow:none}
+body.pt-page{--bg:#f6c8d6;--line:#e8a0ba;--ink:#a3285a;--mute:#b43a6b;color:var(--ink)}
+.pt-page .tier.feat{border-color:#d9578c}
+.pt-page .pt-meet{grid-template-columns:7fr 4fr;gap:2rem 3rem}
+@media(max-width:900px){.pt-page .pt-meet{grid-template-columns:1fr}}
+.pt-page .pt h2,.pt-page #contact h2,.pt-page .artist h2{font-family:"Dancing Script",cursive;font-weight:700;font-size:clamp(3rem,6.5vw,4.4rem);line-height:1.15}
+body.pt-page{--ink:#8f1f4c;--mute:#9e2a5c;font-size:20px}
+.pt-page p,.pt-page li{font-size:1.1rem;line-height:1.75}
+.pt-page .lead,.pt-page .meet-txt .lead{font-weight:600!important;font-size:clamp(1.4rem,2.5vw,1.7rem)!important}
+.pt-page .pt-why h3,.pt-page .tier h3{font-weight:600}
+.pt-page .eyebrow,.pt-page nav,.pt-page .tier .price{font-weight:600}
+.pt-page .pt-why p:not(.lead),.pt-page .tier p,.pt-page .meet-txt p:not(.lead){font-size:19px!important;line-height:1.7;color:var(--ink)}
+.pt-page .pt-why h3,.pt-page .tier h3{font-size:1.75rem}
+.pt-page .pt h2,.pt-page #contact h2,.pt-page .artist h2{font-size:clamp(3.4rem,7.5vw,5.2rem)}
+.pt-page .pt-why p:not(.lead),.pt-page .tier p,.pt-page .meet-txt p:not(.lead){font-size:21px!important}
+.pt-page .lead,.pt-page .meet-txt .lead{font-size:clamp(1.55rem,2.8vw,1.9rem)!important}
+.pt-page .pt-why h3,.pt-page .tier h3{font-size:1.95rem}
+.pt-page .eyebrow,.pt-page nav,.pt-page .tier .price,.pt-page footer,.pt-page .clist a{font-size:19px}
+.pt-page .btn.big{font:700 clamp(1.6rem,3.6vw,2.4rem)/1 "Dancing Script",cursive;letter-spacing:.02em;text-transform:none;padding:1.6rem 4rem;border-radius:999px;background:linear-gradient(135deg,#c2306b,#e0588f);color:#fff;box-shadow:0 12px 30px rgba(160,30,80,.35);margin-top:2.4rem;transition:transform .2s,box-shadow .2s}
+.pt-page .btn.big:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 38px rgba(160,30,80,.45)}
+.pt-page .btn.tierbtn{display:block;width:100%;text-align:center;font:600 19px/1 "Jost",system-ui,sans-serif;letter-spacing:.08em;padding:1.1rem 1rem;border-radius:999px;background:#b02a62;color:#fff;margin-top:1.4rem}
+.pt-page .btn.tierbtn:hover{background:#d0467f}
+.pt-page .pt h2,.pt-page #contact h2,.pt-page .artist h2{font-size:clamp(3.8rem,9vw,6.4rem)}
+.pt-page .btn.big{font:400 clamp(2rem,4.6vw,3.2rem)/1 "Permanent Marker",cursive;letter-spacing:.02em;padding:1.4rem 3.4rem;border-radius:6px;background:#c2306b;color:#fff;border:3px solid #111;box-shadow:6px 6px 0 #111;transform:rotate(-1.5deg)}
+.pt-page .btn.big:hover{transform:rotate(-1.5deg) translate(-2px,-2px);box-shadow:8px 8px 0 #111}
+.pt-page .pt h2,.pt-page #contact h2,.pt-page .artist h2{font-size:clamp(3.8rem,9vw,6.4rem)}
+.pt-page .btn.big{font:600 clamp(1.5rem,3.2vw,2.2rem)/1 "Jost",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;padding:1.7rem 4.2rem;border-radius:4px;background:#a3285a;color:#fff;border:0;box-shadow:none;transform:none;transition:background .2s}
+.pt-page .btn.big:hover{background:#7f1d45;transform:none;box-shadow:none}
+.pt-page .btn.tierbtn{border-radius:4px}
+.pt-page h2{font-size:clamp(4rem,9vw,6.6rem)!important;line-height:1.1!important}
+.pt-page h2{font-family:"Bodoni Moda","Didot",serif!important;font-weight:600!important;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(2.8rem,6.4vw,4.8rem)!important;line-height:1.08!important}
+.pt-page .btn.big{background:url(img/patreon/blob.svg) center/100% 100% no-repeat!important;color:#ff1f8f!important;font:700 clamp(2.2rem,4.8vw,3.4rem)/1 "Times New Roman",Times,"Liberation Serif",serif!important;letter-spacing:.03em!important;text-transform:uppercase!important;padding:2.6rem 5rem!important;border-radius:0!important;box-shadow:none!important;transform:none!important;transition:transform .2s}
+.pt-page .btn.big:hover{transform:scale(1.03)!important}
+body.pt-page{--ink:#6e1038;--mute:#7a1442}
+.pt-page h2{font-weight:700!important;color:#6e1038!important}
+.pt-page p,.pt-page li{font-size:22px!important;line-height:1.7!important;color:#4a0a26!important}
+.pt-page .lead,.pt-page .meet-txt .lead{font-size:clamp(1.7rem,3vw,2.05rem)!important;font-weight:600!important;color:#4a0a26!important}
+.pt-page .pt-why h3,.pt-page .tier h3{font-size:2.1rem!important;color:#6e1038!important;font-weight:700!important}
+.pt-page .eyebrow,.pt-page .tier .price{font-size:20px!important;color:#6e1038!important;font-weight:700!important}
+.pt-page .btn.big{padding:3.2rem 5.6rem!important}
+.pt-page .btn.big{padding:3.6rem 5.4rem!important}
+.pt-page .joinrow{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:2rem}
+.pt-page .joinrow .cg{height:clamp(240px,34vw,440px);width:auto;flex:none}
+.pt-page .joinrow .btn.big{margin-top:0!important}
+@media(max-width:700px){.pt-page .joinrow{gap:.4rem}.pt-page .joinrow .cg{height:190px}.pt-page .btn.big{padding:2.2rem 2.4rem!important;font-size:1.6rem!important}}
+.pt-page .joinrow .cg{height:clamp(290px,40vw,520px)}
+.pt-page .btn.big{position:relative;background:linear-gradient(180deg,#f07cc0 0%,#e0529f 45%,#cf3f8e 100%)!important;color:#fff!important;font:400 clamp(2.2rem,4.8vw,3.4rem)/1 "Lilita One",system-ui,sans-serif!important;letter-spacing:.03em!important;text-transform:uppercase!important;padding:1.9rem 3.6rem!important;border-radius:999px!important;border:4px solid #b7377e!important;box-shadow:inset 0 -8px 14px rgba(140,20,80,.35),inset 0 6px 10px rgba(255,255,255,.35),0 8px 0 #a32d70,0 14px 22px rgba(120,20,70,.35)!important;text-shadow:0 3px 0 #b7377e,0 0 2px #b7377e;transform:none!important}
+.pt-page .btn.big::before{content:"";position:absolute;left:7%;top:12%;width:22%;height:22%;border-radius:999px;background:rgba(255,255,255,.75);transform:rotate(-12deg)}
+.pt-page .btn.big::after{content:"";position:absolute;right:8%;bottom:16%;width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.8)}
+.pt-page .btn.big:hover{filter:brightness(1.06);transform:translateY(-2px)!important}
+.pt-page .btn.big::before{left:4%;top:14%;width:5%;height:16%;transform:rotate(35deg);background:rgba(255,255,255,.85)}
+.pt-page .btn.big::after{left:9.5%;right:auto;top:12%;bottom:auto;width:9px;height:9px}
+.pt-page .btn.big{font:400 clamp(2.8rem,6vw,4.4rem)/1 "Jacquard 24",serif!important;text-transform:none!important;letter-spacing:.01em!important;-webkit-text-stroke:1.5px #fff;padding:1.6rem 3.4rem 2rem!important}
+.pt-page .btn.big .pp{font-family:"Pixelify Sans",sans-serif;font-weight:700;font-size:.92em;-webkit-text-stroke:0}
+.pt-page .btn.big .pp{font-family:"Jacquarda Bastarda 9",serif;font-weight:400;font-size:1.05em;-webkit-text-stroke:3px #fff}
+.pt-page .btn.big{background:url(img/patreon/linen.png) center/100% 100% no-repeat!important;border:0!important;border-radius:0!important;box-shadow:none!important;color:#6e1038!important;-webkit-text-stroke:.6px #6e1038;text-shadow:none!important;padding:3rem 5rem!important;font-size:clamp(3rem,6.4vw,4.8rem)!important}
+.pt-page .btn.big::before,.pt-page .btn.big::after{display:none!important}
+.pt-page .btn.big .pp{font-family:"Bodoni Moda",serif;font-weight:700;font-size:.9em;-webkit-text-stroke:0;vertical-align:.04em}
+.pt-page .btn.big{text-transform:uppercase!important;letter-spacing:.04em!important}
+.pt-page .btn.big{font-family:"Bodoni Moda",serif!important;font-weight:700!important;-webkit-text-stroke:0;white-space:nowrap}
+.pt-page .btn.big{font-size:clamp(2.2rem,4.2vw,3.3rem)!important;padding:2.6rem 3.6rem!important}
+.pt-page .btn.big .pp{font-size:1em;vertical-align:0}
+
+.pt-page .rosebtn{position:relative;display:block;width:clamp(220px,26vw,330px);flex:none;transition:transform .2s}
+.pt-page .rosebtn img{width:100%;display:block;filter:drop-shadow(0 8px 12px rgba(110,16,56,.25))}
+.pt-page .rosebtn span{position:absolute;left:48.7%;top:25.4%;transform:translate(-50%,-50%) rotate(-4deg);width:58%;text-align:center;color:#fff;font:700 clamp(1.9rem,2.5vw,2.6rem)/.95 "Dancing Script",cursive;text-shadow:0 2px 3px rgba(120,10,60,.55),0 0 1px rgba(120,10,60,.6)}
+.pt-page .rosebtn:hover{transform:rotate(-3deg) scale(1.03)}
+.pt-page .rosebtn span{font-size:clamp(2.3rem,3.1vw,2.6rem)!important;width:64%;transform:translate(-50%,-50%) rotate(-3deg);letter-spacing:.01em}
+.pt-page .rosebtn span{top:31%!important;font-size:clamp(2.3rem,3.1vw,2.6rem)!important;width:64%;transform:translate(-50%,-50%) rotate(-3deg)!important}
+.pt-page .rosebtn .rtxt{position:absolute;left:48.7%;top:31%;width:58%;transform:translate(-50%,-50%);overflow:visible}
+.pt-page .rosebtn .rtxt text{font-family:"Lilita One",sans-serif;fill:#fff;paint-order:stroke;stroke:#a8195f;stroke-width:1.2px}
+.pt-page .rosebtn .t1{font-size:19px;letter-spacing:1px}
+.pt-page .rosebtn .t2{font-size:22px;letter-spacing:.3px}
+.pt-page .rosebtn .rtxt text{fill:#111!important;stroke:none!important}
+.pt-page .rosebtn .t1{font-size:21px!important;letter-spacing:1.6px!important}
+.pt-page .rosebtn .t2{font-size:21px!important;letter-spacing:.6px!important;transform-box:fill-box;transform-origin:center;transform:scale(1,1.4)}
+.pt-page .rosebtn .t1{font-size:17px!important;letter-spacing:1.2px!important}.pt-page .rosebtn .t2{font-size:19px!important;letter-spacing:.4px!important}
+.pt-page .rosebtn img{filter:drop-shadow(4px 10px 10px rgba(90,10,45,.38)) drop-shadow(1px 3px 3px rgba(90,10,45,.25))!important}
+.pt-page .rosebtn .rtxt{left:48.2%!important;top:30.7%!important;width:50%!important}.pt-page .rosebtn .t1{font-size:19px!important;letter-spacing:1.4px!important}.pt-page .rosebtn .t2{font-size:21px!important}
+.pt-page .rosebtn .t1{font-size:20px!important}
+.pt-page .rosebtn .t1,.pt-page .rosebtn .t2{font-size:22px!important;letter-spacing:.8px!important}.pt-page .rosebtn .t2{transform:none!important}
+.pt-page .rosebtn::after{content:"";position:absolute;left:48.2%;top:30.7%;width:49%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;
+background:radial-gradient(ellipse 55% 32% at 38% 24%,rgba(255,255,255,.55),rgba(255,255,255,.12) 60%,transparent 75%),linear-gradient(125deg,transparent 52%,rgba(255,255,255,.18) 60%,transparent 68%),radial-gradient(circle at 50% 50%,transparent 62%,rgba(120,10,60,.18) 100%);
+box-shadow:inset 0 -6px 10px rgba(120,10,60,.18),inset 0 4px 6px rgba(255,255,255,.35);mix-blend-mode:screen}
+.pt-page .rosebtn::after{mix-blend-mode:normal!important;
+background:radial-gradient(ellipse 34% 14% at 34% 20%,rgba(255,255,255,.75),rgba(255,255,255,.25) 55%,transparent 80%),radial-gradient(ellipse 60% 40% at 45% 28%,rgba(255,255,255,.22),transparent 70%),linear-gradient(130deg,transparent 55%,rgba(255,255,255,.22) 62%,transparent 70%),radial-gradient(circle at 70% 82%,rgba(255,255,255,.35),transparent 8%),radial-gradient(circle,transparent 64%,rgba(110,10,55,.22) 100%)!important}
+.pt-page .rosebtn::after{box-shadow:inset 0 -5px 9px rgba(120,10,60,.2)!important;
+background:
+radial-gradient(ellipse 13% 5% at 36% 47%,rgba(255,255,255,.95) 55%,rgba(255,255,255,0) 100%),
+radial-gradient(circle at 48% 47%,rgba(255,255,255,.9) 1.6%,transparent 2.6%),
+radial-gradient(ellipse 34% 6% at 50% 88%,rgba(255,255,255,.8) 50%,rgba(255,255,255,0) 100%),
+radial-gradient(circle,transparent 66%,rgba(110,10,55,.2) 100%)!important}
+.pt-page .rosebtn::after{box-shadow:inset 0 -6px 10px rgba(120,10,60,.18),inset 0 4px 6px rgba(255,255,255,.35)!important;
+background:radial-gradient(ellipse 34% 14% at 34% 20%,rgba(255,255,255,.75),rgba(255,255,255,.25) 55%,transparent 80%),radial-gradient(ellipse 60% 40% at 45% 28%,rgba(255,255,255,.22),transparent 70%),linear-gradient(130deg,transparent 55%,rgba(255,255,255,.22) 62%,transparent 70%),radial-gradient(circle at 70% 82%,rgba(255,255,255,.35),transparent 8%),radial-gradient(circle,transparent 64%,rgba(110,10,55,.22) 100%)!important}
+.pt-page .rosebtn .clickme{position:absolute;left:-62%;top:-14%;width:72%;overflow:visible;pointer-events:none;transform:rotate(-8deg)}
+.pt-page .rosebtn .clickme text{font:700 34px "Dancing Script",cursive;fill:#111}
+.pt-page .rosebtn .clickme path{stroke:#111;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:700px){.pt-page .rosebtn .clickme{left:-30%;top:-22%;width:60%}}
+.pt-page .rosebtn .clickme{left:-58%!important;top:92%!important;width:80%!important;transform:rotate(-4deg)!important}.pt-page .joinrow{padding-bottom:6rem}
+.pt-page .rosebtn::after{background:radial-gradient(circle,transparent 64%,rgba(110,10,55,.25) 100%)!important;box-shadow:inset 0 -6px 10px rgba(120,10,60,.2),inset 0 3px 5px rgba(255,255,255,.4)!important}
+.pt-page .rosebtn .rtxt path.gl{fill:none!important;stroke:rgba(255,255,255,.92)!important;stroke-width:4.5;stroke-linecap:round}
+.pt-page .rosebtn .rtxt path.gl2{fill:none!important;stroke:rgba(255,255,255,.75)!important;stroke-width:3;stroke-linecap:round}
+.pt-page .rosebtn img{filter:drop-shadow(10px 18px 10px rgba(60,5,30,.55)) drop-shadow(2px 4px 3px rgba(60,5,30,.45))!important}
+.pt-page .rosebtn .clickme text{font:400 30px "Permanent Marker",cursive!important}
+.pt-page .rosebtn .clickme{transform:none!important;left:-62%!important;top:95%!important}.pt-page .rosebtn .clickme path{stroke-width:3!important}
+.pt-page .rosebtn .rtxt text{fill:#fff8f0!important}.pt-page .rosebtn .rtxt path.gl,.pt-page .rosebtn .rtxt path.gl2{display:none}
+.pt-page .rosebtn::before{content:"";position:absolute;left:48.2%;top:30.7%;width:49%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;z-index:0;mix-blend-mode:multiply;opacity:.55;
+background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55  0 0 0 0 .2  0 0 0 0 .2  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"),radial-gradient(circle at 40% 35%,rgba(255,255,255,.0),rgba(60,0,10,.25) 100%)}
+.pt-page .rosebtn .rtxt{z-index:1}
+.pt-page .rosebtn img{position:relative;z-index:0}.pt-page .rosebtn::before{z-index:1!important;opacity:.8!important}.pt-page .rosebtn .rtxt{z-index:2!important}
+.pt-page .rosebtn .rtxt .sh1{fill:none;stroke:rgba(255,255,255,.55);stroke-width:3;stroke-linecap:round;filter:blur(.5px)}
+.pt-page .rosebtn .rtxt .sh2{fill:rgba(255,255,255,.5);filter:blur(.6px)}
+.pt-page .rosebtn .rtxt .sh3{fill:rgba(255,255,255,.75)}

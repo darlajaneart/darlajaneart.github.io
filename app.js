@@ -15,3 +15,4 @@ lb.onclick=e=>{if(e.target==lb)close()};
 addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key=='Escape')close();if(e.key=='ArrowLeft')show(cur-1);if(e.key=='ArrowRight')show(cur+1)});
 let sx=null;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
 lb.addEventListener('touchend',e=>{if(sx==null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)show(cur+(dx<0?1:-1));sx=null});
+(()=>{const h=location.hash.slice(1),b=h&&document.querySelector('nav button[data-f="'+h+'"]');if(b)b.click()})();
