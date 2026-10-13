@@ -283,3 +283,16 @@ html,body{overflow-x:clip;max-width:100%}
 @media(max-width:700px){.pt-page .rosebtn img.clickme.ch-hand{margin-top:40px!important;margin-left:-10px!important}}
 .pt-page .rosebtn img.clickme.ch-hand{margin-top:26px!important}
 @media(max-width:700px){.pt-page .rosebtn img.clickme.ch-hand{margin-top:24px!important}.pt-page .joinrow{padding-bottom:6rem!important}}
+/* v70 balance rosette between cowgirls (circle centered, equal ink gaps) */
+.pt-page .joinrow .rosebtn{translate:1.6% 0}
+@media(max-width:700px){.pt-page .joinrow .cg{translate:1.4px 0}}
+/* v71 deterministic title sequin stripe (index + patreon) */
+body.sq-home,body.pt-page{position:relative}
+.sq-top-layer{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.sq-top-layer img{position:absolute;display:block;height:auto;margin:0;filter:drop-shadow(0 1px 2px rgba(255,255,255,.6)) drop-shadow(0 1px 2px rgba(160,70,110,.15))}
+body.sq-home header,body.sq-home nav,body.sq-home main{position:relative;z-index:1}
+/* v72 nav: each item clearly separate */
+nav{column-gap:1.7em!important;row-gap:.55em!important}
+nav>a,nav>button{white-space:nowrap!important;position:relative}
+nav>a+a::before,nav>a+button::before,nav>button+a::before,nav>button+button::before{content:"";position:absolute;left:calc(-.85em - 2.5px);top:50%;width:5px;height:5px;margin-top:-3px;border-radius:50%;background:currentColor;opacity:.4;pointer-events:none}
+nav>.nl::before{display:none!important}
