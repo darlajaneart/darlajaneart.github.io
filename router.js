@@ -1,13 +1,13 @@
 /* Hash routing: each nav tab shows only its own section, scrolled to the top.
-   ''/#all = gallery (all), #digital #ink-and-pencil #paintings = filtered gallery, #meet = Meet the Artist, #contact = Contact */
-(function(){var main=document.querySelector('main'),ab=document.getElementById('about'),ct=document.getElementById('contact'),nav=document.querySelector('header nav');if(!main||!nav)return;
+   ''/#all = gallery (all), #digital #ink-and-pencil #paintings = filtered gallery, #new = New Art, #meet = Meet the Artist, #contact = Contact */
+(function(){var main=document.querySelector('main'),ab=document.getElementById('about'),ct=document.getElementById('contact'),na=document.getElementById('newart'),nav=document.querySelector('header nav');if(!main||!nav)return;
 if('scrollRestoration' in history)history.scrollRestoration='manual';
 var F=['digital','ink-and-pencil','paintings'];
 [].forEach.call(nav.querySelectorAll('a[href="#about"]'),function(a){a.setAttribute('href','#meet')});
-function key(){var h=decodeURIComponent(location.hash.slice(1)).toLowerCase();if(h=='about')h='meet';return h=='meet'||h=='contact'||F.indexOf(h)>=0?h:'all'}
+function key(){var h=decodeURIComponent(location.hash.slice(1)).toLowerCase();if(h=='about')h='meet';if(h=='new-art')h='new';return h=='new'||h=='meet'||h=='contact'||F.indexOf(h)>=0?h:'all'}
 var busy=false;
-function route(){var h=key(),view=h=='meet'||h=='contact'?h:'gallery';
- main.hidden=view!='gallery';if(ab)ab.hidden=view!='meet';if(ct)ct.hidden=view!='contact';document.body.setAttribute('data-view',view);
+function route(){var h=key(),view=h=='new'||h=='meet'||h=='contact'?h:'gallery';
+ main.hidden=view!='gallery';if(ab)ab.hidden=view!='meet';if(ct)ct.hidden=view!='contact';if(na)na.hidden=view!='new';document.body.setAttribute('data-view',view);
  if(view=='gallery'){var b=nav.querySelector('button[data-f="'+h+'"]');if(b&&!b.classList.contains('on')){busy=true;b.click();busy=false}}
  [].forEach.call(nav.querySelectorAll('button'),function(b){b.classList.toggle('on',view=='gallery'&&b.dataset.f==h);b.setAttribute('aria-pressed',view=='gallery'&&b.dataset.f==h?'true':'false')});
  [].forEach.call(nav.querySelectorAll('a[href^="#"]'),function(a){var on=a.getAttribute('href')=='#'+view;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});

@@ -35,3 +35,60 @@ addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key
 let sx=null;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
 lb.addEventListener('touchend',e=>{if(sx==null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)show(cur+(dx<0?1:-1));sx=null});
 (()=>{const h=location.hash.slice(1),b=h&&document.querySelector('nav button[data-f="'+h+'"]');if(b)b.click()})();
+
+/* =====================================================================
+   NEWSLETTER CONFIG (MailerLite)  <-- paste your MailerLite details here
+   action: the form's action URL from MailerLite's embedded form HTML,
+           e.g. "https://assets.mailerlite.com/jsonp/123456/forms/987654321/subscribe"
+   formId: the MailerLite form ID, e.g. "987654321"
+   While either is empty the signup shows a friendly "coming soon" state.
+   ===================================================================== */
+const NEWSLETTER = { action: "", formId: "" };
+
+(function(){
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const ML=['January','February','March','April','May','June','July','August','September','October','November','December'];const fmt=d=>{const p=String(d).split('-');return (p[1]?ML[+p[1]-1]+' ':'')+p[0]};
+/* signup form (used in the New Art section and in the popup) */
+const READY=!!(NEWSLETTER.action&&NEWSLETTER.formId);
+const HEART='<svg class="na-heart" viewBox="0 0 64 56" aria-hidden="true"><path d="M32 54C14 41 3 31 3 18 3 9 10 2 18.5 2 25 2 29.5 5.6 32 10.5 34.5 5.6 39 2 45.5 2 54 2 61 9 61 18c0 13-11 23-29 36z"/></svg>';
+function collage(inner,small){return '<div class="nlc'+(small?' nlc-sm':'')+'">'+inner+'</div>'}
+function nokia(id){const ph='<img class="nk-phone" src="img/nokia-signup.webp" width="559" height="850" alt="Pink Nokia phone">';
+ return '<div class="nk">'+'<div class="nk-stage">'+ph+
+ '<form class="nk-screen nl-form" novalidate>'+
+ '<p class="nk-title">Get new art in your inbox</p>'+
+ '<p class="nk-line">New art, no spam.</p>'+
+ '<label class="nl-label" for="'+id+'">Your email</label>'+
+ '<div class="nk-field"><input id="'+id+'" type="email" name="fields[email]" autocomplete="email" inputmode="email" placeholder="your@email" required spellcheck="false"><span class="nk-cur" aria-hidden="true"></span></div>'+
+ '<p class="nk-msg nl-msg" role="status" aria-live="polite">'+(READY?'':'Coming soon!')+'</p>'+
+ '<div class="nk-keys"><button type="submit" class="nk-join">Join</button><button type="button" class="nk-clear">Clear</button></div>'+
+ '</form></div>'+BLURB.replace('</p>',(READY?'':'<span class="soon">My mailing list opens very soon. Check back shortly!</span>')+'</p>')+'</div>'}
+function formHTML(id){return '<form class="nl-form" novalidate data-id="'+id+'">'+
+ '<label class="nl-label" for="'+id+'">Your email</label><div class="nl-row">'+
+ '<input id="'+id+'" type="email" name="fields[email]" autocomplete="email" inputmode="email" placeholder="you@example.com" required'+(READY?'':' disabled')+'>'+
+ '<button type="submit"'+(READY?'':' disabled')+'>'+(READY?'Sign me up':'Coming soon')+'</button></div>'+
+ '<p class="nl-msg" role="status" aria-live="polite">'+(READY?'Just new art, a few times a year. Unsubscribe anytime.':'My mailing list opens very soon. Check back shortly!')+'</p></form>'}
+function wire(f){f.addEventListener('submit',e=>{e.preventDefault();const msg=f.querySelector('.nl-msg'),inp=f.querySelector('input'),btn=f.querySelector('button');
+ if(!READY){msg.textContent=f.classList.contains('nk-screen')?'Coming soon! Opens shortly.':'My mailing list opens very soon. Check back shortly!';return}
+ const v=inp.value.trim();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){msg.textContent='Please check that email address.';inp.focus();return}
+ const fd=new FormData();fd.append('fields[email]',v);fd.append('ml-submit','1');fd.append('anticsrf','true');btn.disabled=true;btn.textContent='Sending…';
+ fetch(NEWSLETTER.action,{method:'POST',body:fd,mode:'no-cors'}).then(()=>{f.classList.add('done');msg.textContent='Thank you! Check your inbox to confirm.';try{localStorage.setItem('dj_nl_joined','1')}catch(_){}})
+  .catch(()=>{btn.disabled=false;btn.textContent=btn.classList.contains('nk-join')?'Join':'Sign me up';msg.textContent='Hmm, that didn\u2019t go through. Please try again.'})})}
+const BLURB='<p class="nl-blurb"><strong>Join my art list:</strong> be the first to see new illustrations, paintings and videos the moment they\u2019re posted, plus occasional behind-the-scenes peeks. No spam, just art, and you can unsubscribe anytime.</p>';
+(()=>{const box=document.getElementById('na-signup-top');if(!box)return;box.innerHTML=nokia('nl-email-top');const f=box.querySelector('form');wire(f);
+ const inp=f.querySelector('input');f.querySelector('.nk-clear').onclick=()=>{inp.value='';f.querySelector('.nk-msg').textContent=READY?'':'Coming soon!';inp.focus()}})();
+
+/* gentle once-per-visitor popup: after ~20s or 50% scroll; remembered in localStorage */
+const KEY='dj_nl_popup_seen';let seen=false;try{seen=!!localStorage.getItem(KEY)||!!localStorage.getItem('dj_nl_joined')}catch(_){}
+if(seen)return;
+let shown=false,timer;
+function open(){if(shown)return;shown=true;clearTimeout(timer);removeEventListener('scroll',onScroll);try{localStorage.setItem(KEY,'1')}catch(_){}
+ const p=document.createElement('aside');p.className='nl-pop';p.setAttribute('role','dialog');p.setAttribute('aria-label','Get new art in your inbox');
+ p.innerHTML='<button class="nl-x" type="button" aria-label="Close">&times;</button>'+collage('<h3 class="nl-title">Get new art in your inbox</h3><p class="nl-blurb">New art straight to you. No spam, ever.</p>'+formHTML('nl-pop-email'),true);
+ document.body.appendChild(p);wire(p.querySelector('form'));requestAnimationFrame(()=>p.classList.add('show'));
+ const close=()=>{p.classList.remove('show');setTimeout(()=>p.remove(),300);removeEventListener('keydown',esc2)};
+ const esc2=e=>{if(e.key==='Escape')close()};p.querySelector('.nl-x').onclick=close;addEventListener('keydown',esc2)}
+function onScroll(){const h=document.documentElement.scrollHeight-innerHeight;if(h>200&&scrollY/h>=.5)open()}
+timer=setTimeout(open,20000);addEventListener('scroll',onScroll,{passive:true});
+window.djShowSignupPopup=open; // handy for testing
+})();
