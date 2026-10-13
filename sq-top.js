@@ -14,3 +14,16 @@ window.sqTopPlace=place;addEventListener('load',place);addEventListener('resize'
 /* nav: hide separator dot on items that start a new wrapped line */
 (function(){function f(){var n=document.querySelector('header nav');if(!n)return;var t=null;[].forEach.call(n.children,function(c){c.classList.remove('nl');if(t!==null&&c.offsetTop>t+4)c.classList.add('nl');t=c.offsetTop})}
 addEventListener('load',f);addEventListener('resize',f);if(document.fonts)document.fonts.ready.then(f)})();
+/* Patreon: organic spilled-sequin scatter around the ribbon */
+window.sqAfter=function(){var L=document.querySelector('.sq-layer'),p=document.querySelector('.pt-hero .lead'),ro=document.querySelector('.rosebtn>img'),ch=document.querySelector('.clickme');if(!L||!p||!ro)return;
+var sy=scrollY,mob=innerWidth<=700,W=document.documentElement.clientWidth,pr=p.getBoundingClientRect(),cb=(ch||ro).getBoundingClientRect(),top=pr.bottom+sy-30,bot=Math.max(cb.bottom,ro.getBoundingClientRect().bottom)+sy+10;
+var bx=[];function add(b,pd){if(b.width&&b.height)bx.push([b.left-pd,b.top+sy-pd,b.right+pd,b.bottom+sy+pd])}
+document.querySelectorAll('.pt-hero p,.pt-hero h2,.pt-why h2,.pt-why p').forEach(function(e){var g=document.createRange();g.selectNodeContents(e);[].forEach.call(g.getClientRects(),function(r){add(r,mob?5:7)})});
+document.querySelectorAll('.rosebtn>img,.joinrow .cg,.clickme,.btn-hand').forEach(function(e){add(e.getBoundingClientRect(),mob?5:8)});
+[].slice.call(L.querySelectorAll('img')).forEach(function(i){var b=i.getBoundingClientRect(),cy=b.top+sy+b.height/2;if(cy>top&&cy<bot)i.remove()});
+var sd=mob?29:47;function rnd(){sd=(sd*16807)%2147483647;return (sd-1)/2147483646}
+var F=['sq-02-teal','sq-10-pink','sq-14-gold','sq-08-silver','sq-16-pink','sq-04-teal','sq-21-gold','sq-12-pink','sq-18-silver','sq-01-gold','sq-15-teal','sq-19-pink','sq-09-silver','sq-13-pink'];
+var placed=[],N=mob?14:22,mn=mob?12:13,mx=mob?21:28,cl=[];for(var c=0;c<(mob?3:4);c++)cl.push([8+rnd()*(W-16),top+rnd()*(bot-top)]);
+function ok(x,y,s){if(x<4||x+s>W-4||y<top||y+s>bot)return false;for(var k=0;k<bx.length;k++){var q=bx[k];if(x+s>q[0]&&x<q[2]&&y+s>q[1]&&y<q[3])return false}for(k=0;k<placed.length;k++){var o=placed[k];if(x+s>o[0]-2&&x<o[0]+o[2]+2&&y+s>o[1]-2&&y<o[1]+o[2]+2)return false}return true}
+for(var t=0,n=0;n<N&&t<6000;t++){var s=mn+Math.pow(rnd(),1.6)*(mx-mn),x,y;if(rnd()<.55){var C=cl[Math.floor(rnd()*cl.length)],a=rnd()*6.28,d=rnd()*(mob?40:60);x=C[0]+Math.cos(a)*d;y=C[1]+Math.sin(a)*d*.7}else{x=rnd()*W;y=top+rnd()*(bot-top)}
+ if(!ok(x,y,s))continue;placed.push([x,y,s]);n++;var i=document.createElement('img');i.className='trail';i.src='img/patreon/sequins/'+F[Math.floor(rnd()*F.length)]+'.png';i.alt='';i.style.cssText='left:'+x.toFixed(0)+'px;top:'+y.toFixed(0)+'px;width:'+s.toFixed(0)+'px;transform:rotate('+(rnd()*360).toFixed(0)+'deg)';L.appendChild(i)}};
