@@ -1,0 +1,27 @@
+:root{--bg:#faf8f4;--ink:#2a2724;--mute:#6f6962;--line:#e6e1d8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:18px/1.7 "Georgia","Iowan Old Style",serif;-webkit-font-smoothing:antialiased}
+header{text-align:center;padding:5.5rem 1.5rem 2.5rem}
+h1{font:400 clamp(2.8rem,7vw,5rem)/1 "Cormorant Garamond","Didot","Bodoni 72","Playfair Display",Georgia,serif;letter-spacing:.06em}
+.sub{margin-top:1rem;font:500 .85rem/1 system-ui,sans-serif;letter-spacing:.35em;text-transform:uppercase;color:var(--mute)}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin-top:2.8rem;font:500 .95rem system-ui,sans-serif;letter-spacing:.08em}
+nav button,nav a{background:none;border:0;color:var(--mute);cursor:pointer;font:inherit;text-decoration:none;padding:.3rem 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+nav button:hover,nav a:hover{color:var(--ink)}nav button.on{color:var(--ink);border-color:var(--ink)}
+main{max-width:1500px;margin:0 auto;padding:1rem clamp(1rem,4vw,3rem) 4rem}
+.grid{columns:3 320px;column-gap:1.6rem}
+.tile{break-inside:avoid;margin-bottom:1.6rem;cursor:zoom-in;overflow:hidden;background:#efebe4;opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
+.tile.in{opacity:1;transform:none}.tile.hide{display:none}
+.tile img{display:block;width:100%;height:auto;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .6s}
+.tile:hover img{transform:scale(1.025);filter:brightness(1.03)}
+#about{max-width:640px;margin:2rem auto 0;padding:4rem 1.5rem 5rem;text-align:center;border-top:1px solid var(--line)}
+#about h2{font:400 2.2rem "Cormorant Garamond",Georgia,serif;margin-bottom:1.2rem}
+#about p{color:#4a453f;margin-bottom:1rem}
+footer{text-align:center;padding:2rem;font:.85rem system-ui,sans-serif;color:var(--mute)}
+#lb{position:fixed;inset:0;background:rgba(250,248,244,.97);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s;z-index:9}
+#lb.open{opacity:1;pointer-events:auto}
+#lb figure{text-align:center}
+#lb img{max-width:90vw;max-height:84vh;box-shadow:0 10px 40px rgba(0,0,0,.12);transition:opacity .3s}
+#lb figcaption{margin-top:1rem;font:1rem system-ui,sans-serif;color:var(--mute);letter-spacing:.04em}
+#lb button{position:absolute;background:none;border:0;font:300 2.4rem/1 system-ui,sans-serif;color:var(--mute);cursor:pointer;padding:1rem;transition:color .2s}
+#lb button:hover{color:var(--ink)}.x{top:.5rem;right:1rem}.pv{left:.5rem;top:50%;transform:translateY(-50%)}.nx{right:.5rem;top:50%;transform:translateY(-50%)}
+@media(max-width:600px){header{padding-top:3.5rem}nav{gap:1.2rem}.pv,.nx{display:none}}
