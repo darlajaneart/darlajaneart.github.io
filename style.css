@@ -313,3 +313,13 @@ body.nav-stuck header{z-index:60!important}
 /* v76 page-style hash views */
 [hidden]{display:none!important}
 body[data-view=meet] #about,body[data-view=contact] #contact{min-height:calc(100vh - 20rem)}
+
+/* v77 video tile (Guardian speed paint) + top hero stack */
+.tile video{display:block;width:100%;height:auto;background:transparent;object-fit:cover;pointer-events:none}
+.tile.vid{background:#fff}
+.hero{display:flex;gap:1.6rem;align-items:flex-start;margin-bottom:1.6rem}
+.hero .h-stack{display:flex;flex-direction:column;gap:1.6rem}.hero .tile{margin-bottom:0}
+#lb video{max-width:90vw;max-height:84vh;box-shadow:0 10px 40px rgba(0,0,0,.12);background:transparent;display:block;margin:0 auto}
+#lb [hidden]{display:none!important}
+
+@media (max-width:600px){.hero{display:block}.hero .h-stack{display:none}}
