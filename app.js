@@ -43,7 +43,7 @@ lb.addEventListener('touchend',e=>{if(sx==null)return;const dx=e.changedTouches[
    formId: the MailerLite form ID, e.g. "987654321"
    While either is empty the signup shows a friendly "coming soon" state.
    ===================================================================== */
-const NEWSLETTER = { action: "", formId: "" };
+const NEWSLETTER = { action: "https://assets.mailerlite.com/jsonp/2710563/forms/201343794809931519/subscribe", formId: "201343794809931519" };
 
 (function(){
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
