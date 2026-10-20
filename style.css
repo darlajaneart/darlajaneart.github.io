@@ -416,3 +416,24 @@ body.nav-stuck header{z-index:60!important}
 .sp-can{display:block;flex:none;height:auto;position:relative;z-index:1}
 .sp-cap{font:400 15px/1.45 "Jost",system-ui,sans-serif;margin:.6rem 0 0;opacity:.85}
 @media(max-width:600px){.sp-cap{font-size:14px}.sp-eyebrow{font-size:12px}}
+/* ===== Buy Prints refresh (Oct 20): full-bleed brown, compact tiles, search ===== */
+html,body{overflow-x:clip}
+.op-sec{margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;width:auto;padding-left:max(1rem,calc((100vw - 1240px)/2))!important;padding-right:max(1rem,calc((100vw - 1240px)/2))!important}
+.op-thumbs{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))!important;gap:.7rem!important}
+.op-th{padding:6px}
+.op-thimg{padding:4px}
+.op-thimg img{height:130px;width:100%;object-fit:contain!important}
+.op-thbar{flex-direction:column;align-items:stretch;gap:.4rem;margin-top:.45rem}
+.op-thbar span{font:600 13px/1.25 "Jost",system-ui,sans-serif;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.op-pick{padding:.45rem .5rem;font-size:12px;letter-spacing:.06em}
+.op-search{clear:both;position:relative;margin:0 0 1rem}
+#op-q{width:100%;box-sizing:border-box;background:var(--choc);color:var(--blush);border:1px solid rgba(242,167,191,.6);border-radius:999px;padding:.8rem 2.8rem .8rem 1.2rem;font:500 16px/1.2 "Jost",system-ui,sans-serif;-webkit-appearance:none;appearance:none}
+#op-q::placeholder{color:rgba(255,230,239,.55)}
+#op-q::-webkit-search-cancel-button{display:none}
+#op-q:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 1px var(--rose)}
+.op-qx{position:absolute;right:.4rem;top:50%;transform:translateY(-50%);width:2.2rem;height:2.2rem;border-radius:50%;border:0;background:var(--rose);color:var(--choc);font:600 20px/1 system-ui,sans-serif;cursor:pointer}
+.op-qx[hidden]{display:none}
+.op-nomatch{grid-column:1/-1;text-align:center;padding:1.5rem .5rem}.op-nomatch em{color:var(--rose);font-style:normal}
+@media(max-width:900px){.op-thumbs{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media(max-width:700px){.op-thumbs{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:.45rem!important}.op-thimg img{height:100px;max-height:none}.op-th{padding:4px}.op-thimg{padding:3px}.op-thbar span{font-size:11.5px}.op-pick{font-size:11px;padding:.45rem .2rem;letter-spacing:.03em}.op-sec{padding-left:.6rem!important;padding-right:.6rem!important}}
+/* ===== /Buy Prints refresh ===== */
