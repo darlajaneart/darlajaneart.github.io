@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New Art — October 2026 · Darla Jane</title><meta name="theme-color" content="#f5d2d1"><meta name="description" content="New art from Darla Jane, October 2026. Order any piece as a print or sticker.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=81">
+<style>
+.na{--choc:#3a2219;--choc2:#4e2f22;--blush:#ffe6ef;--rose:#f2a7bf}
+.na-hero{text-align:center;max-width:760px;margin:0 auto;padding:1rem 1.5rem 3rem}
+.na-hero h2{font:400 clamp(3rem,7vw,4.6rem)/1.1 "Pinyon Script",cursive;color:var(--ink)}
+.na-hero .lead{font:400 1.4rem/1.5 "Cormorant Garamond",Georgia,serif;color:var(--ink);margin-top:1rem}
+.shopbtn{display:inline-block;margin-top:2rem;padding:1.1rem 2.8rem;background:var(--choc);color:var(--blush);font:500 15px/1 "Jost",system-ui,sans-serif;letter-spacing:.26em;text-transform:uppercase;text-decoration:none;border:1px solid var(--choc);border-radius:999px;transition:background .3s,color .3s,transform .3s}
+.shopbtn:hover{background:transparent;color:var(--choc);transform:translateY(-2px)}
+.na-gallery{background:var(--choc);padding:clamp(3rem,7vw,5.5rem) clamp(1rem,4vw,3rem)}
+.na-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(1.5rem,3vw,2.5rem)}
+.card{background:var(--choc2);border:1px solid rgba(242,167,191,.28);padding:14px 14px 1.8rem;text-align:center;display:flex;flex-direction:column;box-shadow:0 18px 40px rgba(0,0,0,.28);transition:transform .4s,box-shadow .4s}
+.card:hover{transform:translateY(-4px);box-shadow:0 26px 50px rgba(0,0,0,.36)}
+.frame{position:relative;background:#fbf6f0;padding:14px;border:1px solid rgba(242,167,191,.5);outline:1px solid rgba(255,230,239,.12);outline-offset:6px;margin:6px}
+.frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.tag{position:absolute;top:22px;left:22px;background:var(--choc);color:var(--rose);font:500 11px/1 "Jost",system-ui,sans-serif;letter-spacing:.24em;text-transform:uppercase;padding:.5rem .7rem}
+.card h3{margin-top:1.6rem;font:500 1.6rem/1.2 "Cormorant Garamond",Georgia,serif;letter-spacing:.08em;color:var(--blush)}
+.card .med{margin-top:.35rem;font:italic 400 1.1rem/1.4 "Cormorant Garamond",Georgia,serif;color:rgba(255,230,239,.75)}
+.card .rule{width:40px;height:1px;background:var(--rose);margin:1rem auto 0;opacity:.7}
+.reqbtn{margin:1.3rem auto 0;background:transparent;color:var(--blush);border:1px solid var(--rose);border-radius:999px;padding:.85rem 1.8rem;font:500 13px/1 "Jost",system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s}
+.reqbtn:hover,.reqbtn:focus-visible{background:var(--rose);color:var(--choc)}
+.fbox{margin-top:2.4rem;background:var(--choc);color:var(--blush);padding:clamp(1.6rem,5vw,3rem);text-align:left;border:1px solid var(--choc);outline:1px solid var(--line);outline-offset:8px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.fbox label{display:block;margin:1.2rem 0 .45rem;font:500 12px/1 "Jost",system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--rose)}
+.fbox input,.fbox select,.fbox textarea{width:100%;background:var(--choc2);color:var(--blush);border:1px solid rgba(242,167,191,.55);border-radius:0;padding:.85rem 1rem;font:400 1.1rem/1.4 "Cormorant Garamond",Georgia,serif;-webkit-appearance:none;appearance:none}
+.fbox select{background-image:linear-gradient(45deg,transparent 50%,#f2a7bf 50%),linear-gradient(135deg,#f2a7bf 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+.fbox input:focus,.fbox select:focus,.fbox textarea:focus{outline:none;border-color:var(--rose);box-shadow:0 0 0 1px var(--rose)}
+.fbox textarea{min-height:110px;resize:vertical}
+.fbox ::placeholder{color:rgba(255,230,239,.45)}
+.submit{display:block;margin:2rem auto 0;background:var(--rose) url(https://darlajaneart.github.io/img/newsletter/bg-pink.png);background-size:cover;color:var(--choc);border:0;border-radius:999px;padding:1.05rem 2.8rem;font:500 14px/1 "Jost",system-ui,sans-serif;letter-spacing:.24em;text-transform:uppercase;cursor:pointer;transition:transform .3s}
+.submit:hover{transform:translateY(-2px)}.submit:disabled{opacity:.6;cursor:default;transform:none}
+.err{margin-top:1rem;text-align:center;color:#ffb3c7;font:400 1.05rem "Cormorant Garamond",Georgia,serif;min-height:1.2em}
+.thanks{text-align:center;font:400 1.7rem/1.4 "Cormorant Garamond",Georgia,serif;padding:2rem 0}
+.thanks span{display:block;font:400 3rem/1 "Pinyon Script",cursive;color:var(--rose);margin-bottom:.6rem}
+.na-shop{text-align:center;padding:0 1.5rem 4rem}
+@media(max-width:600px){.row{grid-template-columns:1fr;gap:0}.na-grid{grid-template-columns:1fr}}
+</style></head><body class="na"><div class="sq-top-layer" aria-hidden="true"></div>
+<header><h1 class="sig"><a href="index.html"><img src="img/signature.png" alt="Darla Jane"></a></h1><p class="sub">Illustration</p>
+<nav><a href="index.html">All</a><a href="index.html#digital">Digital</a><a href="index.html#ink-and-pencil">Ink &amp; Pencil</a><a href="index.html#paintings">Paintings</a><a class="on" href="new-art.html" aria-current="page">New Art</a><a href="order-prints.html">Order Prints</a><a href="https://darla-jane-shop.fourthwall.com" target="_blank" rel="noopener">Shop</a><a href="patreon.html">Join the Club</a><a href="index.html#about">Meet the Artist</a><a href="#contact">Contact</a></nav></header>
+<main>
+<section class="na-hero"><p class="eyebrow">October 2026</p><h2>New Art</h2>
+<p class="lead">Six new pieces from my sketchbook, from expressive ink line work to a ballpoint portrait. Each one can be made into a print for you.</p>
+<a class="shopbtn" href="https://darla-jane-shop.fourthwall.com" target="_blank" rel="noopener">Visit my shop</a></section>
+<section class="na-gallery" aria-label="New releases"><div class="na-grid" id="grid"></div></section>
+<section id="request" class="op-sec"><div class="op-head"><p class="eyebrow">Prints &amp; stickers</p><h2>Every piece. Any size.</h2>
+<p>New work lands all the time, and not everything makes it to the shop &mdash; but every piece can be yours as a print or sticker. Pick it, size it, done.</p>
+<a class="op-shop" href="https://darla-jane-shop.fourthwall.com" target="_blank" rel="noopener">Looking for other merch? Visit my shop</a></div>
+<div id="op-root"></div></section>
+<div class="na-shop"><a class="shopbtn" href="https://darla-jane-shop.fourthwall.com" target="_blank" rel="noopener">Visit my shop</a></div>
+</main>
+<section id="contact"><p class="eyebrow">Contact</p><h2>Let&rsquo;s work together</h2>
+<p class="clist"><a href="tel:+14065791428">(406) 579-1428</a><span>&middot;</span><a href="mailto:Darlajanebzn@gmail.com">Darlajanebzn@gmail.com</a><span>&middot;</span><a href="https://instagram.com/janielaranie" target="_blank" rel="noopener">Instagram @janielaranie</a></p>
+<p class="loc">Bozeman, Montana &middot; available remotely</p></section>
+<footer>&copy; Darla Jane. All artwork &copy; the artist.</footer>
+<script>
+(function(){
+var B='https://darlajaneart.github.io/img/newsletter/';
+var P=[['STEPHANIE','nl-2026-10-07.jpg','Ballpoint pen on paper, 10/19'],['NEXT DOOR','nl-2026-10-01.jpg','Ink on paper, 10/19',1],['TYPE B','nl-2026-10-02.jpg','Ink on paper, 10/19'],['60 Second Practice','nl-2026-10-03.jpg','Ink on paper, 10/19',1],['AUTUMN STROLL','nl-2026-10-04.jpg','Ink on paper, 10/19'],['FLOWERFIED','nl-2026-10-05.jpg','Ink on paper, 10/19',1]];
+var grid=document.getElementById('grid');
+P.forEach(function(p){
+  var c=document.createElement('article');c.className='card';
+  c.innerHTML='<div class="frame"><span class="tag">New release</span><img loading="lazy" width="800" height="1000"></div><h3></h3><p class="med"></p><div class="rule"></div><button type="button" class="reqbtn">Order this print</button>';
+  var im=c.querySelector('img');im.src=B+p[1];im.alt=p[0]+' by Darla Jane';
+  c.querySelector('h3').textContent=p[0];c.querySelector('.med').textContent=p[2];
+  c.querySelector('.reqbtn').addEventListener('click',function(){window.opSelect&&opSelect(p[0]);document.getElementById('request').scrollIntoView({behavior:'smooth'})});
+  if(p[3])c.querySelector('.reqbtn').textContent='Order as a sticker';
+  grid.appendChild(c);
+});
+})();
+</script><script src="size-preview.js?v=2"></script><script src="order-prints.js?v=6"></script><script src="sq-top.js?v=8"></script><script src="nav.js?v=1"></script></body></html>
