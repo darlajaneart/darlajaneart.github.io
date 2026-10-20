@@ -130,7 +130,12 @@ function opSearch(q){var KW=window.OP_KEYWORDS||{},terms=q.split(/\s+/).filter(B
  root.querySelector('#op-cat').addEventListener('click',function(){if(i.value){i.value='';x.hidden=true}},true);
  i.addEventListener('keydown',function(e){if(e.key==='Escape'&&i.value){e.stopPropagation();x.onclick()}})})();
 /* ===== [/search] ===== */
+/* ===== [cat-param] ?cat=digital|ink-and-pencil|paintings preselects a category and opens step 3 (Oct 20) ===== */
+var opCatQ=(q.get('cat')||'').trim().toLowerCase(),opCatJump=false;
+if(opCatQ&&!S.cat&&CATS.some(function(k){return k[0]===opCatQ})){S.cat=opCatQ;opCatJump=true}
+/* ===== [/cat-param] ===== */
 render();
+if(opCatJump)setTimeout(function(){var z=root.querySelector('[data-s=piece]');if(z)z.scrollIntoView({block:'start'})},60);
 if(npNote){var g0=root.querySelector('.op-steps');g0.insertAdjacentHTML('afterbegin','<p class="op-np">Sorry, <strong>'+esc(q.get('piece'))+'</strong> isn’t available to order yet. Please pick another piece below.</p>')}
 if(S.piece)setTimeout(function(){},300);
 })();
