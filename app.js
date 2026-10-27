@@ -1,4 +1,4 @@
-const tiles=[...document.querySelectorAll('.tile')],lb=document.getElementById('lb'),li=lb.querySelector('img'),cap=lb.querySelector('figcaption');let vis=tiles,cur=0;
+const tiles=[...document.querySelectorAll('.tile')],lb=document.getElementById('lb'),li=lb.querySelector('img'),cap=lb.querySelector('figcaption');let vis=tiles.filter(t=>!t.classList.contains('hide')),cur=0;
 const grid=document.querySelector('.grid');
 function layout(){const n=innerWidth<700?1:innerWidth<1100?2:3;grid.innerHTML='';const cols=[],hs=[];for(let i=0;i<n;i++){const c=document.createElement('div');c.className='col';grid.appendChild(c);cols.push(c);hs.push(0)}
 tiles.filter(t=>!t.classList.contains('hide')).forEach(t=>{const im=t.querySelector('img');let k=0;for(let i=1;i<n;i++)if(hs[i]<hs[k]-1)k=i;cols[k].appendChild(t);hs[k]+=im.height/im.width||im.getAttribute('height')/im.getAttribute('width')})}
@@ -6,7 +6,7 @@ let lastN=0;addEventListener('resize',()=>{const n=innerWidth<700?1:innerWidth<1
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'50px'});
 tiles.forEach(t=>io.observe(t));
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x==b));const f=b.dataset.f;
-tiles.forEach(t=>{const s=f=='all'||t.dataset.c==f;t.classList.toggle('hide',!s);t.classList.remove('in');if(s){io.unobserve(t);io.observe(t)}});vis=tiles.filter(t=>!t.classList.contains('hide'));layout()});
+tiles.forEach(t=>{const s=f=='all'?!('nohome' in t.dataset):t.dataset.c==f;t.classList.toggle('hide',!s);t.classList.remove('in');if(s){io.unobserve(t);io.observe(t)}});vis=tiles.filter(t=>!t.classList.contains('hide'));layout()});
 function show(i){cur=(i+vis.length)%vis.length;const t=vis[cur];li.style.opacity=0;const im=new Image();im.onload=()=>{li.src=t.dataset.f;li.alt=t.dataset.t;cap.textContent=t.dataset.t;li.style.opacity=1};im.src=t.dataset.f}
 tiles.forEach(t=>t.onclick=()=>{show(vis.indexOf(t));lb.classList.add('open');lb.setAttribute('aria-hidden','false')});
 const close=()=>{lb.classList.remove('open');lb.setAttribute('aria-hidden','true')};
