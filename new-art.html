@@ -41,7 +41,7 @@
 <nav><a href="index.html">All</a><a href="index.html#digital">Digital</a><a href="index.html#ink-and-pencil">Ink &amp; Pencil</a><a href="index.html#paintings">Paintings</a><a class="on" href="new-art.html" aria-current="page">New Art</a><a href="order-prints.html">Order Prints</a><a href="https://darla-jane-shop.fourthwall.com" target="_blank" rel="noopener">Shop</a><a href="patreon.html">Join the Club</a><a href="index.html#about">Meet the Artist</a><a href="#contact">Contact</a></nav></header>
 <main>
 <section class="na-hero"><p class="eyebrow">October 2026</p><h2>New Art</h2>
-<p class="lead">Six new pieces from my sketchbook, from expressive ink line work to a ballpoint portrait. Each one can be made into a print for you.</p>
+<p class="lead">Nine new pieces, from fresh oil portraits to expressive ink line work and a ballpoint portrait. Each one can be made into a print for you.</p>
 <a class="shopbtn" href="https://darla-jane-shop.fourthwall.com" target="_blank" rel="noopener">Visit my shop</a></section>
 <section class="na-gallery" aria-label="New releases"><div class="na-grid" id="grid"></div></section>
 <section id="request" class="op-sec"><div class="op-head"><p class="eyebrow">Prints &amp; stickers</p><h2>Every piece. Any size.</h2>
@@ -57,8 +57,17 @@
 <script>
 (function(){
 var B='https://darlajaneart.github.io/img/newsletter/';
+var Q=[['janielaranie','img/paintings/full/janielaranie.jpg','Oil on canvas, 10/26/26','1/1'],['Wild Man','img/paintings/full/wild-man.jpg','Oil on canvas, 10/24/26','1/1'],['Sketch 38','img/ink-and-pencil/full/sketch-38.jpg','Ink on paper','792/1200']];
 var P=[['STEPHANIE','nl-2026-10-07.jpg','Ballpoint pen on paper, 10/19'],['NEXT DOOR','nl-2026-10-01.jpg','Ink on paper, 10/19',1],['TYPE B','nl-2026-10-02.jpg','Ink on paper, 10/19'],['60 Second Practice','nl-2026-10-03.jpg','Ink on paper, 10/19',1],['AUTUMN STROLL','nl-2026-10-04.jpg','Ink on paper, 10/19'],['FLOWERFIED','nl-2026-10-05.jpg','Ink on paper, 10/19',1]];
 var grid=document.getElementById('grid');
+Q.forEach(function(p){
+  var c=document.createElement('article');c.className='card';
+  c.innerHTML='<div class="frame"><span class="tag">New release</span><img loading="lazy"></div><h3></h3><p class="med"></p><div class="rule"></div><button type="button" class="reqbtn">Order this print</button>';
+  var im=c.querySelector('img');im.src=p[1];im.alt=p[0]+' by Darla Jane';im.style.aspectRatio=p[3];im.style.objectFit='contain';
+  c.querySelector('h3').textContent=p[0];c.querySelector('.med').textContent=p[2];
+  c.querySelector('.reqbtn').addEventListener('click',function(){window.opSelect&&opSelect(p[0]);document.getElementById('request').scrollIntoView({behavior:'smooth'})});
+  grid.appendChild(c);
+});
 P.forEach(function(p){
   var c=document.createElement('article');c.className='card';
   c.innerHTML='<div class="frame"><span class="tag">New release</span><img loading="lazy" width="800" height="1000"></div><h3></h3><p class="med"></p><div class="rule"></div><button type="button" class="reqbtn">Order this print</button>';
@@ -69,4 +78,4 @@ P.forEach(function(p){
   grid.appendChild(c);
 });
 })();
-</script><script src="size-preview.js?v=2"></script><script src="order-keywords.js?v=1"></script><script src="order-prints.js?v=8"></script><script src="sq-top.js?v=8"></script><script src="nav.js?v=1"></script></body></html>
+</script><script src="size-preview.js?v=2"></script><script src="order-keywords.js?v=1"></script><script src="order-prints.js?v=9"></script><script src="sq-top.js?v=8"></script><script src="nav.js?v=1"></script></body></html>
